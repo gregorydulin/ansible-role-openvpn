@@ -107,7 +107,7 @@
     mode: 744
 
 - name: create initial certificate revocation list squence number
-  shell: "echo 00 > crl_number"
+  command: "echo 00 > crl_number"
   args:
     chdir: "{{ openvpn_key_dir }}"
     creates: crl_number

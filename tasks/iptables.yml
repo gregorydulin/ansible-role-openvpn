@@ -79,7 +79,7 @@
   notify: "save iptables"
 
 - name: Save existing iptables rule before start iptables service
-  shell: "{{ iptables_save_command }}"
+  command: "{{ iptables_save_command }}"
   when: __iptables_installed.changed|bool
 
 - name: Enable iptables

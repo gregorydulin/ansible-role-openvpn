@@ -106,7 +106,7 @@
     group: root
     mode: 744
 
-- name: create initial certificate revocation list squence number
+- name: create initial certificate revocation list sequence number
   command: "echo 00 > crl_number"
   args:
     chdir: "{{ openvpn_key_dir }}"

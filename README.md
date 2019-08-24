@@ -23,6 +23,7 @@ Role Variables
 |------------------------------------|---------|--------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | openvpn_base_dir                   | string  |              | /etc/openvpn                                   | Path where your OpenVPN config will be stored                                                                                                                     |
 | openvpn_key_dir                    | string  |              | /etc/openvpn/keys                              | Path where your server private keys and CA will be stored                                                                                                         |
+| openvpn_fetch_config_dir           | string  |              | /tmp/ansible                                   | Path on localhost where your client configuration files will be stored                                                                                            |
 | openvpn_port                       | int     |              | 1194                                           | The port you want OpenVPN to run on. If you have different ports on   different servers, I suggest you set the port in your inventory file.                       |
 | openvpn_server_hostname            | string  |              | `{{inventory_hostname}}`                       | The server name to place in the client configuration file (if different from the `inventory_hostname`             |
 | openvpn_proto | string  | udp, tcp | udp | The protocol you want OpenVPN to use |
@@ -73,6 +74,7 @@ Role Variables
 | openvpn_keepalive_timeout          | int     |              | 30                                             | Set `keepalive` timeout seconds                                                                                                                                   |
 | openvpn_service_user               | string  |              | nobody                                         | Set the openvpn service user.                                                                                                                                     |
 | openvpn_service_group              | string  |              | nogroup                                        | Set the openvpn service group.                                                                                                                                    |
+| clients                            | list    |              | empty                                          | List of client friendly names (used to generate client config filenames)                                                                                          |
 
 
 LDAP object
